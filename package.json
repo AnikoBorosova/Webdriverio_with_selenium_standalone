@@ -1,0 +1,31 @@
+{
+  "name": "webdriverio_with_selenium_standalone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnikoBorosova/Webdriverio_with_selenium_standalone.git"
+  },
+  "author": "Anikó Borosová",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnikoBorosova/Webdriverio_with_selenium_standalone/issues"
+  },
+  "homepage": "https://github.com/AnikoBorosova/Webdriverio_with_selenium_standalone#readme",
+  "dependencies": {
+    "@wdio/cli": "7.6.0"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "7.6.0",
+    "@wdio/jasmine-framework": "7.6.0",
+    "@wdio/local-runner": "7.6.0",
+    "@wdio/selenium-standalone-service": "7.6.0"
+  }
+}
