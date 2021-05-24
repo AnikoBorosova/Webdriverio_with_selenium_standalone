@@ -11,7 +11,6 @@ describe("Tests for successful login process with valid user credentials", () =>
 
 	it("should login with valid credentials", () => {
 		loginPage.open(mainUrl);
-
 		loginPage.doLogin(standardUser, password);
 		expect(loginPage.validateCartElemIsDisplayed()).toBe(true);
 	});

@@ -11,7 +11,6 @@ describe("Tests for unsuccessful login process with locked out user credentials"
 
 	it("tries to login with locked out user", () => {
 		loginPage.open(mainUrl);
-
 		loginPage.doLogin(lockedOutUser, password);
 		expect(loginPage.validateLoginIsUnsuccessful()).toBe(true);
 	});

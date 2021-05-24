@@ -14,6 +14,6 @@ describe("Tests for problematic user", () => {
 	it("checks that items' images are not correct and all the same", () => {
 		loginPage.open(mainUrl);
 		loginPage.doLogin(problemUser, password);
-		expect(inventoryPage.validateItemImageSrc(incorrectImgSrc));
+		expect(inventoryPage.validateItemImageSrc(incorrectImgSrc)).toBe(true);
 	});
 });
