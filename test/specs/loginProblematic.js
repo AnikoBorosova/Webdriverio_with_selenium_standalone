@@ -7,7 +7,7 @@ const mainUrl = config.urls.main;
 const userData = require("../../testData/userData");
 const password = userData.loginData.password;
 const problemUser = userData.loginData.problemUser;
-const incorrectImgSrc = userData.itemImgs.incorrectImgSrc;
+const incorrectImgSrc = userData.itemImgs.imgSrcIncorrect;
 
 describe("Tests for problematic user", () => {
 
