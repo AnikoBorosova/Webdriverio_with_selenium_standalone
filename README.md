@@ -14,7 +14,7 @@ NodeJS version: ```12.16.1``` or above
 
 ### How to run the tests locally
 
-Location of the web tests: ```./wdioTests/specs/```
+Location of the web tests: ```./tests/specs/```
 
 - clone the repository
 - make sure you have the latest stable Chrome version (v90.0.4430.212) and latest Firefox Nightly version (v90.0a1)
@@ -24,7 +24,7 @@ Location of the web tests: ```./wdioTests/specs/```
 
 ### Test scenarios 
 
-Find the scenarios in ```./wdioTests/specs/```
+Find the scenarios in ```./tests/specs/```
 
 1. Login process - positive scenario
 - Navigate to main page
