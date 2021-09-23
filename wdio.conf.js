@@ -274,21 +274,38 @@ exports.config = {
 	},
 	*/
 
-	afterTest: function (test, context, { error, result, duration, passed, retries }) {
+	afterTest: async function (test, context, { error, result, duration, passed, retries }) {
 		// take a screenshot anytime a test fails and throws an error
 		if (error) {
-			console.log("AAAAAAAAAAAAAa ", error)
-			const testFileName = error.stack.split("specs/")[1].split(".")[0];
+			console.log("AAAAAAAAAAAAAa ", error.stack)
+			console.log("AAAAAAAAAAAAAa ", typeof error.stack)
+			const testFileName = await error.stack.split("specs/")[1].split(".")[0];
 
 			const screenshotsDir = path.join(__dirname, "./errorScreenshots");
 			if (!fs.existsSync(screenshotsDir)) {
 				fs.mkdirSync(screenshotsDir);
 			}
-			browser.saveScreenshot("./errorScreenshots/error_" + testFileName + ".png");
+			await browser.saveScreenshot("./errorScreenshots/error_" + testFileName + ".png");
 		}
 	},
 
-
+	/*
+		{
+			[0-0]     at Object.afterTest (D:\a\wdio_with_selenium_standalone\wdio_with_selenium_standalone\wdio.conf.js:281:55)
+			[0-0]   matcherName: 'toBe',
+			[0-0]     at execHook (D:\a\wdio_with_selenium_standalone\wdio_with_selenium_standalone\node_modules\@wdio\sync\build\executeHooksWithArgs.js:36:31)
+			[0-0]   message: 'Expected false to be true.',
+			[0-0]   stack: 'Error: Expected false to be true.\n' +
+			[0-0]     '    at <Jasmine>\n' +
+			[0-0]     '    at Spec.addExpectationResult (D:\\a\\wdio_with_selenium_standalone\\wdio_with_selenium_standalone\\node_modules\\@wdio\\jasmine-framework\\build\\index.js:296:32)\n' +
+			[0-0]     '    at <Jasmine>\n' +
+			[0-0]     '    at UserContext.<anonymous> (D:\\a\\wdio_with_selenium_standalone\\wdio_with_selenium_standalone\\test\\specs\\loginLockedOut.js:15:51)\n' +
+			[0-0]     '    at UserContext.executeSync (D:\\a\\wdio_with_selenium_standalone\\wdio_with_selenium_standalone\\node_modules\\@wdio\\sync\\build\\index.js:38:22)',
+			[0-0]   passed: false,
+			[0-0]   expected: true,
+			[0-0]   actual: false
+			[0-0] }
+	*/
 	/**
 	 * Hook that gets executed after the suite has ended
 	 * @param {Object} suite suite details
