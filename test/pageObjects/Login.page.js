@@ -34,7 +34,7 @@ class LoginPage extends Page {
 
 	validateLoginIsUnsuccessful() {
 		try {
-			return this.errorMessageElem.getText().includes("AAAA out");
+			return this.errorMessageElem.getText().includes("locked out");
 		} catch (error) {
 			console.log("From validateLoginIsUnsuccessful() ", error);
 			return false;
