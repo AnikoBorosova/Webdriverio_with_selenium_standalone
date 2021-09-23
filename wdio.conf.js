@@ -277,6 +277,7 @@ exports.config = {
 	afterTest: function (test, context, { error, result, duration, passed, retries }) {
 		// take a screenshot anytime a test fails and throws an error
 		if (error) {
+			console.log("AAAAAAAAAAAAAa ", error)
 			const testFileName = error.stack.split("specs/")[1].split(".")[0];
 
 			const screenshotsDir = path.join(__dirname, "./errorScreenshots");
