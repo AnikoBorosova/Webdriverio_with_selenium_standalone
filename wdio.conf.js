@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 exports.config = {
 	//
 	// ====================
@@ -274,9 +277,13 @@ exports.config = {
 	afterTest: function (test, context, { error, result, duration, passed, retries }) {
 		// take a screenshot anytime a test fails and throws an error
 		if (error) {
-			//browser.takeScreenshot();
-			browser.saveScreenshot("./errorShots/assertionError_" + new Date() + ".png");
-			//browser.saveScreenshot();
+			const testFileName = error.stack.split("specs/")[1].split(".")[0];
+
+			const screenshotsDir = path.join(__dirname, "./errorScreenshots");
+			if (!fs.existsSync(screenshotsDir)) {
+				fs.mkdirSync(screenshotsDir);
+			}
+			browser.saveScreenshot("./errorScreenshots/error_" + testFileName + ".png");
 		}
 	},
 
