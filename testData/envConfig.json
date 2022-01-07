@@ -4,8 +4,8 @@
 		"inventory": "https://www.saucedemo.com/inventory.html"
 	},
 	"pauses": {
-		"micro": 500,
-		"short": 1000,
-		"long": 15000
+		"micro": 100,
+		"short": 3000,
+		"long": 10000
 	}
 }
