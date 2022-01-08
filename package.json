@@ -8,8 +8,7 @@
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"testLocal": "node prepareConfig.js && ./node_modules/.bin/wdio ./wdio-shared.conf.js",
-		"testGithub": "node prepareConfig.js && ./node_modules/.bin/wdio ./wdio-github.conf.js"
+		"testLocal": "node prepareConfig.js && ./node_modules/.bin/wdio ./wdio-local.conf.js"
 	},
 	"repository": {
 		"type": "git",
