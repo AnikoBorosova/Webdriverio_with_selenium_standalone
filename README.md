@@ -1,7 +1,9 @@
 ## Automated UI-tests with WebdriverIO - wdio v7 + wdio-docker-service
 
 Website being tested: https://www.saucedemo.com/
+
 Docker image being used: ```selenium/standalone-edge:96.0-20211217```
+
 Browser: ```Microsoft Edge v96```
 
 ### Run the tests locally
@@ -46,7 +48,7 @@ E.g.: pull the ```standalone-edge``` docker image with the tag ```96.0-20211217`
 ```docker pull selenium/standalone-edge:96.0-20211217```
 
 4. Adjust the docker image in ```wdio-shared.conf.js``` based on your needs
-
+```
 dockerOptions: {
 	image: 'selenium/standalone-edge:96.0-20211217',
 	healthCheck: 'http://localhost:4444',
@@ -55,5 +57,10 @@ dockerOptions: {
 		shmSize: '2g'
 	}
 }
+```
+
 5. Run your tests
-No need to start selenium-standalone with the command 'selenium-standalone start' nor to run the docker image with the command 'docker run xyz'. Simply use the command ```npm run testLocal```.
+
+No need to start selenium-standalone with the command 'selenium-standalone start' nor to run the docker image with the command 'docker run xyz'. 
+
+Simply use the command ```npm run testLocal```.
